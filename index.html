@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+
+<HTML lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+    <title>Simple RPG</title>
+</head>
+
+<body>
+    <main>
+        <div id="game">
+            <div id="text">Welcome to a simple RPG. Defeat the monsters, save the town. Good luck adventurer.</div>
+            <div id="monster_stats">
+                <span id="monster_name"></span>
+                <span id="monster_health"></span>
+                <span id="monster_level"></span>
+            </div>
+            <div id="controls">
+                <button id="button1">Go to Store</button>
+                <button id="button2">Go to Fountain</button>
+                <button id="button3">Go to Tavern</button>
+                <button id="button4">Go to Wilderness</button>
+                <button id="button5">Current Quests</button>
+            </div>
+            <div id="stats">
+                <span class="stat">XP: <span id="xp"><strong>0</strong></span></span>
+                <span class="stat">Health: <span id="health"><strong>100</strong></span></span>
+                <span class="stat">Gold: <span id="gold"><strong>10</strong></span></span>
+            </div>
+            <div id="current_arms">
+                <span class="stat">Weapon: <span id="weapon"><strong>Pointy Stick</strong></span></span>
+                <span class="stat">Armor: </span id="armor"><strong>None</strong></span></span>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+
+</HTML>
