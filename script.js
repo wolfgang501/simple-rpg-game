@@ -1,5 +1,5 @@
 // Player stats
-let heatlh = 100;
+let playerHeatlh = 100;
 let xp = 0;
 let gold = 10;
 
@@ -35,7 +35,7 @@ const monsterNameText = document.querySelector('#monster_name');
 const monsterHealthText = document.querySelector('#monster_health');
 const monsterLevelText = document.querySelector('#monster_level');
 
-const text = document.querySelector('#text');
+const playerStory = document.querySelector('#text');
 
 
 // monster list
@@ -43,57 +43,57 @@ const monsters = [
     {
         name: "orc",
         level: 1,
-        health: 10
+        mHealth: 10
     },
     {
         name: "wolf",
         level: 1,
-        health: 8
+        mHealth: 8
     },
     {
         name: "bear",
         level: 1,
-        health: 15
+        mHealth: 15
     },
     {
         name: "thif",
         level: 3,
-        health: 10
+        mHealth: 10
     },
     {
         name: "slime",
         level: 2,
-        health: 20
+        mHealth: 20
     },
     {
         name: "centaur",
         level: 10,
-        health: 60
+        mHealth: 60
     },
     {
         name: "zombie",
         level: 5,
-        health: 50
+        mHealth: 50
     },
     {
         name: "Nessie",
         level: 60,
-        health: 900
+        mHealth: 900
     },
     {
         name: "snakes",
         level: 10,
-        health: 20
+        mHealth: 20
     },
     {
         name: "goblins",
         level: 15,
-        health: 60
+        mHealth: 60
     },
     {
         name: "troll",
         level: 40,
-        health: 200
+        mHealth: 200
     }
 ];
 
@@ -160,7 +160,7 @@ const location = [
     {
         name: "Wilderness",
         "button text": ["Return to Town", "Go to the Woods", "Go to the Lake", "Enter the Cave", "Approach the hill"],
-        "button function": [goTown, goWoods, goLake, goCave, goHill],
+        "button function": [goSquare, goWoods, goLake, goCave, goHill],
         text: "You enter the wilderness. Before you see a bunch of woods, a lake in the distance, a suspicious cave, and a pleasent looking hill"
     }, 
     {
@@ -239,24 +239,63 @@ const location = [
 ];
 
 // update location
-function updateLocation(location){
+function updateLocation(playerLocation){
     // dont display monster stats banner
     monsterStats.style.display = "none";
 
-    // update text
-    button1.innerText = location["button text"][0];
-    button2.innerText = location["button text"][1];
-    button3.innerText = location["button text"][2];
-    button4.innerText = location["button text"][3];
-    button5.innerText = location["button text"][4];
+    // update button text
+    button1.innerText = playerLocation["button text"][0];
+    button2.innerText = playerLocation["button text"][1];
+    button3.innerText = playerLocation["button text"][2];
+    button4.innerText = playerLocation["button text"][3];
+    button5.innerText = playerLocation["button text"][4];
 
     // update fuctions
-    button1.onclick = location["button functions"][0];
-    button2.onclick = location["button functions"][1];
-    button3.onclick = location["button functions"][2];
-    button4.onclick = location["button functions"][3];
-    button5.onclick = location["button functions"][4];
+    button1.onclick = playerLocation["button function"][0];
+    button2.onclick = playerLocation["button function"][1];
+    button3.onclick = playerLocation["button function"][2];
+    button4.onclick = playerLocation["button function"][3];
+    button5.onclick = playerLocation["button function"][4];
 
     // update box text
-    text.innerText = location.text;
+    playerStory.innerHTML = playerLocation.text;
+}
+
+// initialize buttons
+button1.onclick = goShop;
+button2.onclick = goFountain;
+button3.onclick = goTavern;
+button4.onclick = goWilderness;
+button5.onclick = showQuest;
+
+function goShop(){
+    updateLocation(location[2]);
+}
+
+function goFountain(){
+    updateLocation(location[4]);
+}
+
+function goTavern(){
+    updateLocation(location[3]);
+}
+
+function goWilderness(){
+    updateLocation(location[1]);
+}
+
+function innkeeper(){
+    updateLocation(location[5]);
+}
+
+function adventurer(){
+    updateLocation(location[6]);
+}
+
+function goSquare(){
+    updateLocation(location(0));
+}
+
+function goHill(){
+    updateLocation(location(7));
 }
