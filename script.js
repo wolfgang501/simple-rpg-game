@@ -149,8 +149,9 @@ const armor = [
     }
 ];
 
+
 // location information
-const location = [
+const locations = [
     {
         name: "Town Square",
         "button text": ["Go to Shop", "Go to Tavern", "Go to Fountain", "Go to Wilderness", "Show Current Quests"],
@@ -227,21 +228,33 @@ const location = [
         name: "Princess",
         "button text": "Leave with the princess",
         "button function": [goWilderness],
-        text: ""
+        text: "You find the princess sitting in a corner. You quietly ask if she needs any help out of here. She accepts and the two of you quietly make your way out of the cave."
     },
     {
         name: "Vacant Chamber",
         "button text": ["return to the wilderness"],
         "button function": [goWilderness],
+        text: "You look around the vacant  chanber and think of the princess, who was kept here recently. You decide that there is nothing else here and decide to leave."
+    },
+    {
+        name: "Woods",
+        "button text": ["","","","","Return to wilderness"],
+        "button function": [ , , , , goWilderness],
         text: ""
     },
+    {
+        name: "Lake",
+        "button text": ["Explore","Return to wilderness"],
+        "button function": [fightNessie, goWilderness],
+        text: ""
+    }
     
 ];
 
 // update location
 function updateLocation(playerLocation){
     // dont display monster stats banner
-    monsterStats.style.display = "none";
+    monster_stats.style.display = "none";
 
     // update button text
     button1.innerText = playerLocation["button text"][0];
@@ -269,33 +282,103 @@ button4.onclick = goWilderness;
 button5.onclick = showQuest;
 
 function goShop(){
-    updateLocation(location[2]);
+    updateLocation(locations[2]);
 }
 
+
 function goFountain(){
-    updateLocation(location[4]);
+    updateLocation(locations[4]);
 }
 
 function goTavern(){
-    updateLocation(location[3]);
+    updateLocation(locations[3]);
 }
 
 function goWilderness(){
-    updateLocation(location[1]);
+    updateLocation(locations[1]);
 }
 
 function innkeeper(){
-    updateLocation(location[5]);
+    updateLocation(locations[5]);
 }
 
 function adventurer(){
-    updateLocation(location[6]);
+    updateLocation(locations[6]);
 }
 
 function goSquare(){
-    updateLocation(location(0));
+    updateLocation(locations[0]);
 }
 
 function goHill(){
-    updateLocation(location(7));
+    updateLocation(locations[7]);
 }
+
+function showQuest(){
+
+}
+
+function goWoods(){
+    updateLocation(locations[14]);
+}
+
+function goLake(){
+    updateLocation(locations[15]);
+}
+
+function goCave(){
+    updateLocation(locations[8]);
+}
+
+function buyWeapon(){
+
+}
+
+function buyArmor(){
+
+}
+
+function buyHealth(){
+
+}
+
+function princessQuest(){
+
+}
+
+function nessieQuest(){
+
+}
+
+function zombieQuest(){
+
+}
+
+function fightZombie(){
+
+}
+
+function fightSnakes(){
+
+}
+
+function fightGoblins(){
+
+}
+
+function fightTroll(){
+
+}
+
+function findPrincess(){
+
+}
+
+function fightNessie(){
+
+}
+
+function fightMonster(){
+
+}
+
